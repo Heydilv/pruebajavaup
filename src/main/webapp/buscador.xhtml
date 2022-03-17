@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Facelet Title</title>
+        <h:outputStylesheet library="css" name="general.css"/>
+        
+    </h:head>
+    <h:body>
+         <ui:composition template="app.xhtml">
+		<ui:define name="contenido">
+                    <h1 class="p-mx-6 secondary titulo-principal">Buscador</h1>
+                    
+                    <h:form class="p-my-6 p-mx-6">
+
+                        <div class="p-grid ui-fluid">
+                            <div class="p-col-2">
+                                <p:selectOneMenu value="#{buscadorMB.tipo}">
+                                    <f:selectItem itemLabel="ID" itemValue="id"/>
+                                    <f:selectItem itemLabel="Año" itemValue="anio"/>
+                                    <f:selectItem itemLabel="Fuente de publicación" itemValue="fuente"/>
+                                    <f:selectItem itemLabel="Autor" itemValue="autor"/>
+                                    <f:selectItem itemLabel="Hallazgo" itemValue="hallazgo"/>
+                                </p:selectOneMenu>
+                            </div>
+                            <div class="p-col-8">
+                                <p:inputText value="#{buscadorMB.texto}"/>
+                            </div>
+                            
+                            <div class="p-col-2">
+                                <p:commandButton class="bgprimary border-primary" value="Buscar" action="#{buscadorMB.buscar()}">
+                                </p:commandButton>
+                                
+                            </div>
+                        </div>
+                    </h:form>
+			
+		</ui:define>
+	</ui:composition>
+    </h:body>
+</html>
+

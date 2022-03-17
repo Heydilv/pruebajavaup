@@ -1,0 +1,16 @@
+
+
+.contenedor {
+    height: 100vh;
+}
+
+.imagen {
+    
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.loginform {
+    margin: 10em 5em;
+}
